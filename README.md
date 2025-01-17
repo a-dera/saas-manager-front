@@ -1,93 +1,132 @@
-![nuxt-ui-dashboard-social-card](https://github.com/nuxt-ui-pro/dashboard/assets/739984/f785284b-7db2-4732-af0e-2cb3c0bd7ca2)
+# SaaS Manager Frontend
 
-# Nuxt UI Pro - Dashboard template
+SaaS Manager est une application web open source conçue pour aider les entreprises à gérer leurs applications SaaS, leurs abonnements clients, et leurs finances de manière centralisée et efficace.
 
-[![Nuxt UI Pro](https://img.shields.io/badge/Made%20with-Nuxt%20UI%20Pro-00DC82?logo=nuxt.js&labelColor=020420)](https://ui.nuxt.com/pro)
+## 🌟 Fonctionnalités
 
-- [Live demo](https://dashboard-template.nuxt.dev/)
-- [Play on Stackblitz](https://stackblitz.com/github/nuxt-ui-pro/dashboard)
-- [Documentation](https://ui.nuxt.com/pro/getting-started)
+- **Gestion des Applications SaaS**
+  - Suivi des versions et états des services
+  - Métriques de performance
+  - Gestion des configurations
 
-[![Deploy to NuxtHub](https://hub.nuxt.com/button.svg)](https://hub.nuxt.com/new?repo=nuxt-ui-pro/dashboard)
+- **Gestion des Clients**
+  - Profils clients détaillés
+  - Gestion des abonnements
+  - Système de facturation automatisé
 
-## Quick Start
+- **Suivi Financier**
+  - Tableau de bord des revenus
+  - Rapports financiers
+  - Prévisions et analyses
 
-```bash [Terminal]
-npx nuxi init -t github:nuxt-ui-pro/dashboard
+## Diagramme de classe
+![class_diagram](/class_diagram.png)
+
+## 🚀 Technologies
+
+- **Backend**: AdonisJS
+- **Frontend**: Nuxt.js
+- **Base de données**: PostgreSQL
+- **Déploiement**: Replit via GitHub Actions
+
+## 📋 Prérequis
+
+- Node.js (v16 ou supérieur)
+- PostgreSQL
+- Git
+
+## Structure du projet
+```bash
+saas-manager/
+├── backend/                 # AdonisJS Backend
+│   ├── app/
+│   │   ├── Controllers/    # Contrôleurs de l'application
+│   │   ├── Models/        # Modèles de données
+│   │   ├── Services/      # Services métier
+│   │   └── Middleware/    # Middleware personnalisés
+│   ├── config/            # Configuration AdonisJS
+│   ├── database/
+│   │   ├── migrations/    # Migrations de base de données
+│   │   └── seeds/        # Seeds pour les données initiales
+│   └── tests/            # Tests unitaires et d'intégration
+│
+├── frontend/               # Nuxt.js Frontend
+│   ├── assets/           # Ressources statiques
+│   ├── components/       # Composants Vue.js
+│   ├── layouts/         # Layouts de l'application
+│   ├── pages/           # Pages de l'application
+│   ├── plugins/         # Plugins Nuxt.js
+│   └── store/           # State management Vuex
+│
+├── .github/              # Configuration GitHub Actions
+│   └── workflows/       # Workflows CI/CD
 ```
 
-## Setup
+## 🛠 Installation
 
-Make sure to install the dependencies:
-
+1. Cloner le dépôt
 ```bash
-# npm
+git clone https://github.com/votre-username/saas-manager.git
+cd saas-manager
+```
+
+2. Installation des dépendances Backend
+```bash
+cd backend
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
+cp .env.example .env
+# Configurer les variables d'environnement dans .env
+node ace migration:run
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
+3. Installation des dépendances Frontend
 ```bash
-# npm
+cd ../frontend
+npm install
+cp .env.example .env
+# Configurer les variables d'environnement dans .env
+```
+
+## 🚀 Démarrage
+
+1. Lancer le Backend
+```bash
+cd backend
 npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+2. Lancer le Frontend
+```bash
+cd frontend
+npm run dev
+```
 
-Build the application for production:
+## 🧪 Tests
 
 ```bash
-# npm
-npm run build
+# Backend tests
+cd backend
+npm run test
 
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+# Frontend tests
+cd frontend
+npm run test
 ```
 
-Locally preview production build:
+## 🤝 Contribution
 
-```bash
-# npm
-npm run preview
+Les contributions sont les bienvenues ! Voici comment vous pouvez contribuer :
 
-# pnpm
-pnpm run preview
+1. Fork le projet
+2. Créez votre branche de fonctionnalité (`git checkout -b feature/AmazingFeature`)
+3. Committez vos changements (`git commit -m 'Add some AmazingFeature'`)
+4. Push vers la branche (`git push origin feature/AmazingFeature`)
+5. Ouvrez une Pull Request
 
-# yarn
-yarn preview
+## 📄 Licence
 
-# bun
-bun run preview
-```
+Ce projet est sous licence MIT - voir le fichier [LICENSE.md](LICENSE.md) pour plus de détails.
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## 👥 Contact
 
-## Renovate integration
-
-Install [Renovate GitHub app](https://github.com/apps/renovate/installations/select_target) on your repository and you are good to go.
+Pour toute question ou suggestion, n'hésitez pas à ouvrir une issue sur GitHub.
